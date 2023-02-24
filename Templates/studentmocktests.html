@@ -1,0 +1,57 @@
+{%extends 'index.html'%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {%block content%}
+    <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            
+          </div>
+          <div class="col-md-9">
+            <div class="mt-2 content">
+              <h1>Mock Test</h1>
+              <p>This is a mock test for students.</p>
+              <form class="formquestions" method="GET">
+                <h2 class="Sectionq">Section 1</h2>
+                <p class="Questionlist  text-center">Question 1:Who is the first Defence Minister?</p>
+                <div class="form-check">
+                  <input class="form-check-input qinput" type="radio" name="q1" id="q1a" value="option1">
+                  <label class="form-check-label options" for="q1a">
+                    Option A
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input qinput" type="radio" name="q1" id="q1b" value="option2">
+                  <label class="form-check-label options" for="q1b">
+                    Option B
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input qinput" type="radio" name="q1" id="q1c" value="option3">
+                  <label class="form-check-label options" for="q1c">
+                    Option C
+                  </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input qinput" type="radio" name="q1" id="q1c" value="option3">
+                    <label class="form-check-label options" for="q1c">
+                      Option D
+                    </label>
+                </div>
+                
+                <input class="mt-2 qsubmit" type="submit"/>
+              </form>
+              </div>
+          </div>
+        </div>
+    </div>
+    {%endblock%}
+</body>
+</html>

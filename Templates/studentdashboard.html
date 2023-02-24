@@ -1,0 +1,188 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Student Dashboard</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://vjs.zencdn.net/8.0.4/video-js.css"  />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="{%static 'bootstrap.css'%}">
+    <link rel="stylesheet" href="{%static 'style.css'%}">
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://vjs.zencdn.net/8.0.4/video.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" ></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" ></script>
+	
+</head>
+<body>
+    {%block content%}
+    <!--side bar-->
+    <div id="sidebar-black" class="sidebar-nav">
+      <nav id="navbar-black" class="navbar navbar-default" role="navigation">
+      
+        <div class="navbar-header">
+          
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".sidebar-navbar-collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          
+        </div>
+        
+        <div class="navbar-collapse  sidebar-navbar-collapse">
+        
+          <ul class="nav navbar-nav">
+            <li class="hidden-xs"><a class="navbar-brand" href="/"><p class="text-left">Welcome {{request.user}}</p></a></li>
+            
+            <li class="sidebar-form">
+              <form class="input-group " border="0" id="af" name="af" role="search" action="/archive.php">
+                  <input type="text" class="form-control" id="aa" name="aa" placeholder="Search">
+                <span class="input-group-btn">  
+                  <button type="submit" class="btn btn-md" id="as" name="as" value="Go"><i class="glyphicon glyphicon-search"></i></button>
+                </span>
+              </form>
+            </li>
+            <li class="mb-2">
+              <a href="">Home</a>
+            </li>
+          <li class="dropdown mb-2">
+            <a href="" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-th-list"></i> Mock Tests <b class="caret"></b></a>
+              <ul class="dropdown-menu"> 
+                <li><a href="/studentmocktest">SSC</a></li>
+                <li><a href="/studentmocktest">BANK</a></li>
+                <li><a href="//studentmocktest">GROUP1</a></li>
+              </ul>
+            </li>
+                   
+            <li class="dropdown mb-2">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-tags"></i> Materials <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/">Books</a></li>
+                <li><a href="/">Ebooks</a></li>
+                <li><a href="/">CDs</a></li>
+                <li class="divider"></li>
+                
+                
+              </ul>
+            </li>
+                 
+            <li class="dropdown mb-2">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i> Profile <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/"><i class="glyphicon glyphicon-user"></i> Profile</a></li>
+                <li><a href="/"><i class="glyphicon glyphicon-plus"></i> Account</a></li>
+                <li><a href="/"><i class="glyphicon glyphicon-cog"></i> Settings</a></li>
+                <li><a href="/"><i class="glyphicon glyphicon-comment"></i> Notifications</a></li>           
+              </ul>
+            </li>
+          
+          </ul>
+        </div><!--/.nav-collapse -->
+        
+      </nav><!--/.navbar -->
+    </div><!--/.sidebar-nav -->  
+      
+      <main id="page-wrapper2">
+        <div class="container Dashboard">
+          <h1 class="Title">Student Dashboard</h1>
+          <div class="info-section">
+            <div class="info-box">
+              <h2>Name</h2>
+              <p>John Doe</p>
+            </div>
+            <div class="info-box">
+              <h2>Roll Number</h2>
+              <p>12345</p>
+            </div>
+            <div class="info-box">
+              <h2>Batch</h2>
+              <p>2022</p>
+            </div>
+          </div>
+          
+        </div>  
+        <div class="container">
+          <div class="row justify-content-around">
+            <div class="col-sm-4 col-md-3">
+              <div class="scoreboard">
+                <div class="score">
+                  <svg viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="45" fill="none" stroke-width="10" stroke="#ccc"></circle>
+                    <circle class="progress" cx="50" cy="50" r="45" fill="none" stroke-width="10" stroke="#007bff" style="stroke-dasharray: 141.4px; stroke-dashoffset: 0px;"></circle>
+                    <text x="50" y="50" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#007bff">50%</text>
+                  </svg>
+                </div>
+                <h3>Total Score</h3>
+              </div>
+            </div>
+            <div class="col-sm-4 col-md-3">
+              <div class="scoreboard">
+                <div class="score">
+                  <svg viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="45" fill="none" stroke-width="10" stroke="#ccc"></circle>
+                    <circle class="progress" cx="50" cy="50" r="45" fill="none" stroke-width="10" stroke="#007bff" style="stroke-dasharray: 180px; stroke-dashoffset: 0px;"></circle>
+                    <text x="50" y="50" text-anchor="middle" dominant-baseline="central" font-size="20" fill="#007bff">20%</text>
+                  </svg>
+                </div>
+                <h3>Last Score</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <h2>Student Scores</h2>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Student Name</th>
+                <th>Total Score</th>
+                <th>Last Score</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Student 1</td>
+                <td>80%</td>
+                <td>80%</td>
+              </tr>
+              <tr>
+                <td>Student 2</td>
+                <td>50%</td>
+                <td>50%</td>
+              </tr>
+              <tr>
+                <td>Student 3</td>
+                <td>20%</td>
+                <td>20%</td>
+
+              </tr>
+              <tr>
+                <td>Student 4</td>
+                <td>20%</td>
+                <td>20%</td>
+
+              </tr>
+              <tr>
+                <td>Student 5</td>
+                <td>20%</td>
+                <td>20%</td>
+
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+            
+        
+      </main>
+        
+    {%endblock%}
+</body>
+</html>

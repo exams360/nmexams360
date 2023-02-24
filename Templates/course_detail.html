@@ -1,0 +1,30 @@
+{% extends 'index.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block content %}
+  <div class="course-detail">
+    <img src="{{ course.image.url }}" alt="{{ course.title }}" class="course-image">
+    <h1 class="course-title">{{ course.title }}</h1>
+    <h2 class="course-author">by {{ course.author }}</h2>
+    <p class="course-rating">Rating: {{ course.rating }}</p>
+    <p class="course-price">Price: {{ course.price }}</p>
+
+    <h3 class="course-videos-heading">Videos:</h3>
+    <ul class="course-videos">
+      {% for video in course.videos.all %}
+        <li><a href="{{ video.video_file.url }}">{{ video.title }}</a></li>
+      {% empty %}
+        <li>No videos found.</li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endblock %}
+</body>
+</html>

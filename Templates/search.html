@@ -1,0 +1,36 @@
+{% extends 'index.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block content %}
+    <h1>Search results for "{{ query }}"</h1>
+    {% if courses %}
+        <ul>
+            {% for course in courses %}
+            <div class="navbar navbar-expand-md">
+                <ul class="navbar-nav">
+                <li class="nav-item">
+                <a href="/videos/{{course.id}}" class="nav-link"><img class="img" width="500px" height="200px" src="{{ course.image.url }}"/></a>
+                <h5 class="text-center">{{course.title}}</h5>
+                </li>
+                </ul>
+            </div>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No courses found.</p>
+    {% endif %}
+{% endblock %}
+
+
+
+
+
+</body>
+</html>
