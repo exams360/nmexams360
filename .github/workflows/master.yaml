@@ -13,4 +13,4 @@ jobs:
       with:
         server: ftp.samkirkland.com
         username: Django009
-        password: nmexams360@123
+        password: nmexams360
